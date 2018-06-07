@@ -66,9 +66,9 @@
 			 * No tests failed, when the path is empty.
 			 * With the former code, the relative urls //g and #s failed
 			 */
-			$this->path     = $m[ 5 ][ 0 ];
-			$this->query    = $m[ 7 ][ 0 ];
-			$this->fragment = $m[ 9 ][ 0 ];
+			$this->path     = isset($m[ 5 ][ 0 ]) ? $m[ 5 ][ 0 ] : null;
+			$this->query    = isset($m[ 7 ][ 0 ]) ? $m[ 7 ][ 0 ] : null;
+			$this->fragment = isset($m[ 9 ][ 0 ]) ? $m[ 9 ][ 0 ] : null;
 		}
 
 		private function to_str()
