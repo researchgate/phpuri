@@ -54,8 +54,8 @@
 		private function __construct( $string )
 		{
 			preg_match_all( '/^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?$/', $string, $m );
-			$this->scheme    = $m[ 2 ][ 0 ];
-			$this->authority = $m[ 4 ][ 0 ];
+            $this->scheme    = isset($m[ 2 ][ 0 ]) ? $m[ 2 ][ 0 ] : null;
+            $this->authority = isset($m[ 4 ][ 0 ]) ? $m[ 4 ][ 0 ] : null;
 
 			/**
 			 * CHANGE:
